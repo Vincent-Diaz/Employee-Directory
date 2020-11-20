@@ -1,0 +1,6 @@
+.table {
+  margin: 20px;
+  max-width: 75%;
+  flex: center;
+  justify-content: center;
+}
