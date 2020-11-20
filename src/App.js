@@ -11,12 +11,12 @@ class App extends Component {
     employeeData: [],
     filteredEmployee: [],
     search: "",
-    // order: "ascend"
+    order: "ascend"
   };
 
   componentDidMount() {
     API.getUsers()
-      .then(res => this.setState({ employeeData: res.data.results }))
+      .then(res => this.setState({ employeeData: res.data.results, filteredEmployee: res.data.results }))
       .catch(err => console.log(err));
   }
 
@@ -37,28 +37,30 @@ class App extends Component {
     }
   }
 
-    handleInputChange = event => {
-        this.setState({
-          search: event.target.value
-        })
-      // const employee = this.state.employeeData;
-      const input = event.target.value;
-      this.setState({
-        filterEmployee: this.state.employeeData.filter(employee => employee.name.last.includes(input.toLowerCase()) > -1)
+  handleInputChange = event => {
+    console.log(event.target.value)
+    const employee = this.state.employeeData;
+    const input = event.target.value;
+    this.setState({
+      filteredEmployee: employee.filter(employee => {
+        // employee.name.first.includes(input.toLowerCase()) > -1)
+        let values = Object.values(employee).join("").toLocaleLowerCase();
+        return values.indexOf(input.toLowerCase()) !== -1;
       })
+    })
 
-    }
+  }
 
   render() {
     return (
       <div>
         <Jumbo />
         <Search
-          employee={this.state.filteredEmployee}
+          employee={this.state.employeeData}
           handleInputChange={this.handleInputChange}
         />
         <Table
-          results={this.state.employeeData}
+          results={this.state.filteredEmployee}
           sortByName={this.sortByName}
         />
       </div>
