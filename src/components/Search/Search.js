@@ -5,7 +5,7 @@ function Search(props) {
         <div>
             <form className="form">
                 <input
-                    name="search"
+                    name="employee"
                     onChange={props.handleInputChange}
                     type="text"
                     placeholder="Search By Name"
