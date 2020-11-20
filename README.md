@@ -6,3 +6,9 @@ This app creates an employee directory for thr user to see an employees name, he
 ## Installation
 After cloning down the repo to your local machine. Simply open your integrated terminal and run "npm install" to install all required dependencies. After the install is complete, run "npm start" into the commnad line.
 
+## Technologies
+* Reactjs
+* Bootstrap
+* Javascript
+* HTML
+* CSS
