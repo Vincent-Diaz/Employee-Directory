@@ -4,8 +4,8 @@ function Jumbo() {
     return (
         <div className="jumbotron jumbotron-fluid">
             <div className="container">
-                <h1 className="display-4" className="text-center">Fluid jumbotron</h1>
-                <p className="lead" className="text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                <h1 className="display-4" className="text-center">Employee Directory</h1>
+                <p className="lead" className="text-center">Start by searching for an employee ny name!</p>
             </div>
         </div>
     );
